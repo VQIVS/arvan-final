@@ -1,0 +1,86 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: finance-service
+    url: http://finance-api:8080
+    tags:
+      - finance
+    connect_timeout: 60000
+    write_timeout: 60000
+    read_timeout: 60000
+    retries: 5
+
+  - name: sms-service
+    url: http://sms-api:8080
+    tags:
+      - sms
+    connect_timeout: 60000
+    write_timeout: 60000
+    read_timeout: 60000
+    retries: 5
+
+routes:
+  - name: finance-route
+    service: finance-service
+    paths:
+      - /finance
+    strip_path: true
+    preserve_host: false
+    protocols:
+      - http
+      - https
+    regex_priority: 0
+    https_redirect_status_code: 426
+
+  - name: sms-route
+    service: sms-service
+    paths:
+      - /sms
+    strip_path: true
+    preserve_host: false
+    protocols:
+      - http
+      - https
+    regex_priority: 0
+    https_redirect_status_code: 426
+
+plugins:
+  - name: prometheus
+    config:
+      per_consumer: true
+      status_code_metrics: true
+      latency_metrics: true
+      bandwidth_metrics: true
+
+  - name: cors
+    config:
+      origins:
+        - "*"
+      methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - PATCH
+        - OPTIONS
+      headers:
+        - Accept
+        - Accept-Version
+        - Content-Length
+        - Content-MD5
+        - Content-Type
+        - Date
+        - X-Auth-Token
+        - Authorization
+      exposed_headers:
+        - X-Auth-Token
+      credentials: true
+      max_age: 3600
+
+  - name: rate-limiting
+    config:
+      minute: 100
+      hour: 1000
+      policy: local
+      hide_client_headers: false
