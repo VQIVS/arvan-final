@@ -75,7 +75,6 @@ services:
       dockerfile: build/Dockerfile
     container_name: finance-api
     command: ["./finance-api"]
-    # Removed external port mapping - Kong will route to this service
     depends_on:
       postgres-finance:
         condition: service_started
@@ -104,7 +103,6 @@ services:
       dockerfile: build/Dockerfile
     container_name: sms-api
     command: ["./sms-api"]
-    # Removed external port mapping - Kong will route to this service
     depends_on:
       postgres-sms:
         condition: service_started

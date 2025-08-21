@@ -2,17 +2,17 @@
 
 This README contains my document links, repository links, and everything I have accomplished for this task.
 
-## 📋 Table of Contents
+## Table of Contents
 - [Document Links](#document-links)
 - [Repository Links](#repository-links)
 
-## 🏗️ High-Level Overview & Architecture
+## High-Level Overview & Architecture
 
 This project consists of two main microservices: **Finance Service** and **SMS Gateway Service**. Both services are containerized using Docker and communicate via RabbitMQ for asynchronous messaging. PostgreSQL is used as the primary database for both services.
 For more details, refer to the documentation link above.
 - [Project Documentation](https://docs.vqivs.sbs/share/5ea2vw6xnb/p/sms-gateway-YFg1SdPmw3)
 
-## 🔗 Repository Links
+## Repository Links
 
 ### Main Repositories
 - [Finance Service](github.com/VQIVS/arvan-finance)
@@ -52,7 +52,7 @@ For more details, refer to the documentation link above.
 4. **Take the docker-compose.yml from arvan-final/docker**
    ```bash
     docker compose up -d 
-    # if you want to usre kong , then get kong configs from arvan-final too.
+    # if you want to use kong , then get kong configs from arvan-final too.
    ```
 
 #### Manual Setup (Development)
