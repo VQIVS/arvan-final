@@ -3,8 +3,8 @@
 This README contains my document links, repository links, and everything I have accomplished for this task.
 
 ## Table of Contents
-- [Document Links](#document-links)
-- [Repository Links](#repository-links)
+- Document Link
+- Repository Links
 
 ## High-Level Overview & Architecture
 
@@ -15,8 +15,8 @@ For more details, refer to the documentation link above.
 ## Repository Links
 
 ### Main Repositories
-- [Finance Service](github.com/VQIVS/arvan-finance)
-- [SMS Gateway Service](github.com/VQIVS/arvan-sms)
+- [Finance Service](https://github.com/VQIVS/arvan-finance)
+- [SMS Gateway Service](https://github.com/VQIVS/arvan-sms)
 
 
 ### Installation & Setup
