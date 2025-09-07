@@ -38,15 +38,15 @@ For more details, refer to the documentation link above.
 2. **Setup Finance Service**
    ```bash
    cd arvan-finance
-   cp sample-config.json config.json
-   # Edit config.json with your database credentials
+   cp sample-config.yaml config.yaml
+   # Edit config.yaml with your database credentials
    ```
 
 3. **Setup SMS Service**
    ```bash
    cd ../arvan-sms
-   cp sample-config.json config.json
-   # Edit config.json with your database credentials
+   cp sample-config.yaml config.yaml
+   # Edit config.yaml with your database credentials
    ```
 
 4. **Take the docker-compose.yml from arvan-final/docker**
@@ -71,16 +71,16 @@ For more details, refer to the documentation link above.
 3. **Configure and run Finance service**
    ```bash
    cd arvan-finance
-   cp sample-config.json config.json
-   # Edit config.json with database and RabbitMQ credentials
+   cp sample-config.yaml config.yaml
+   # Edit config.yaml with database and RabbitMQ credentials
    make run-dev
    ```
 
 4. **Configure and run SMS service**
    ```bash
    cd ../arvan-sms
-   cp sample-config.json config.json
-   # Edit config.json with database and RabbitMQ credentials
+   cp sample-config.yaml config.yaml
+   # Edit config.yaml with database and RabbitMQ credentials
    make run-dev
    ```
 
